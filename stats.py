@@ -6,6 +6,7 @@ def count_words(text):
         count +=1
     return count
 
+
 def char_count(text):
     norm_text = text.lower()
     result = {}
@@ -17,3 +18,17 @@ def char_count(text):
         result [c] += 1
 
     return result
+
+def sort_char_count(chars):
+    sort_list = []
+    for char in chars:
+        count = chars[char]
+        sort_list.append({"name": char, "num": count })
+        
+    sort_list.sort(reverse=True, key=sort_on)
+    
+    return sort_list
+
+def sort_on(items):
+    return items["num"]
+        
