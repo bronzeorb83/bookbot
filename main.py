@@ -20,7 +20,12 @@ def print_report(book_path, num_words, num_chars):
     print("============= END ===============")
 
 def main():
-    book_path = "books/frankenstein.txt"
+    
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1) 
+    
+    book_path = sys.argv[1]
     text = get_book_text(book_path)
     num_words = count_words(text)
     num_chars = sort_char_count(char_count(text))
